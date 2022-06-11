@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "692844816572",
+    "project_id": "fudapp-696ad",
+    "storage_bucket": "fudapp-696ad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:692844816572:android:89f844ebaf3efe194a88b9",
+        "android_client_info": {
+          "package_name": "com.jvillacorta.fudapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "692844816572-38qdeks51ngr9d80iagk20t1vie8m5cs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3IShgF77ZUY5Wo3iSPHniLp16U9e6FUs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "692844816572-38qdeks51ngr9d80iagk20t1vie8m5cs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
