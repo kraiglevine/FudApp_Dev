@@ -22,8 +22,7 @@
                 android:layout_height="100dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="40dp"
-                android:layout_marginBottom="60dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/txtPlatoIngredientes"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@android:drawable/ic_menu_gallery" />
@@ -33,18 +32,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="46dp"
                 android:text="Nombre del Plato"
+                android:textSize="20sp"
                 app:layout_constraintStart_toEndOf="@+id/ivPlatoImagen"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/txtPlatoDescripcion"
-                android:layout_width="167dp"
-                android:layout_height="92dp"
+                android:layout_width="171dp"
+                android:layout_height="67dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:text="Descripcion del plato"
+                android:textSize="20sp"
                 app:layout_constraintStart_toEndOf="@+id/ivPlatoImagen"
                 app:layout_constraintTop_toBottomOf="@+id/txtPlatoNombre" />
 
@@ -52,20 +53,26 @@
                 android:id="@+id/txtPlatoPrecio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
                 android:layout_marginTop="60dp"
                 android:layout_marginEnd="30dp"
                 android:text="Precio"
+                android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/txtPlatoDescripcion"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/txtPlatoOferta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
                 android:layout_marginTop="28dp"
                 android:layout_marginEnd="30dp"
                 android:text="Oferta"
+                android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/txtPlatoDescripcion"
                 app:layout_constraintTop_toBottomOf="@+id/txtPlatoPrecio" />
 
             <TextView
@@ -74,7 +81,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
                 android:text="Ingredientes"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ivPlatoImagen" />
         </androidx.constraintlayout.widget.ConstraintLayout>
