@@ -44,14 +44,14 @@ import java.util.Locale;
 
 public class frmRegistrarPlato extends AppCompatActivity {
 
-    EditText txtNombre, txtIngredientes, txtPrecio, txtDescripcion, txtOferta, txtFecha;
+    EditText txtNombre, txtIngredientes, txtPrecio, txtDescripcion, txtOferta, txtFecha, txtImagenURL;
     TextView marcoFecha;
     DatePickerDialog.OnDateSetListener escogerFecha;
     Button btnRegistrarPlato;
     ImageButton btnExaminarImgPlato;
     ImageView ivPlato;
 
-    ActivityResultLauncher<Intent> activityResultLauncher;
+    //ActivityResultLauncher<Intent> activityResultLauncher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +70,7 @@ public class frmRegistrarPlato extends AppCompatActivity {
         txtFecha = findViewById(R.id.txtFechaPlato);
         marcoFecha = findViewById(R.id.marcoFecha);
         mostrarDatePicker();
+        txtImagenURL = findViewById(R.id.txtImagenURL);
 
         btnRegistrarPlato = findViewById(R.id.btnRegistrarPlato);
         btnRegistrarPlato.setOnClickListener(new View.OnClickListener() {
@@ -84,13 +85,17 @@ public class frmRegistrarPlato extends AppCompatActivity {
         btnExaminarImgPlato.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                /*
                 Intent intent = new Intent();
                 intent.setType("image/*");
                 intent.setAction(Intent.ACTION_GET_CONTENT);
                 activityResultLauncher.launch(intent);
+                */
+                Herramientas.cargarImagenURLenIV(txtImagenURL.getText().toString(), ivPlato);
             }
         });
 
+        /*
         activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
             @Override
             public void onActivityResult(ActivityResult result) {
@@ -100,6 +105,7 @@ public class frmRegistrarPlato extends AppCompatActivity {
                 }
             }
         });
+        */
     }
 
     private void mostrarDatePicker(){
@@ -132,9 +138,8 @@ public class frmRegistrarPlato extends AppCompatActivity {
     }
 
     private void registrarPlato(){
-        String nombre, ingredientes, descripcion, fecha;
+        String nombre, ingredientes, descripcion, fecha, imagenURL;
         float precio, oferta;
-        Bitmap imagen;
 
         nombre = txtNombre.getText().toString();
         ingredientes = txtIngredientes.getText().toString();
@@ -144,15 +149,16 @@ public class frmRegistrarPlato extends AppCompatActivity {
         precio = Float.parseFloat(txtPrecio.getText().toString());
         oferta = Float.parseFloat(txtOferta.getText().toString());
 
-        imagen = Herramientas.drawableToBitmap(ivPlato.getDrawable());
+        imagenURL = txtImagenURL.getText().toString();
 
         Plato plato = new Plato(
-                nombre, ingredientes, precio, descripcion, oferta, fecha, imagen
+                nombre, ingredientes, precio, descripcion, oferta, fecha, imagenURL
         );
         PlatoDAO platoDAO = new PlatoDAO(this);
         platoDAO.abrirBD();
         String mensaje = platoDAO.registrarPlato(plato);
         mostrarMensaje(mensaje);
+        startActivity(new Intent(frmRegistrarPlato.this, ListarPlatosActivity.class));
     }
 
 

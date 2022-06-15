@@ -1,9 +1,5 @@
 package com.jvillacorta.fudapp.entity;
 
-import android.graphics.Bitmap;
-
-import java.util.Date;
-
 public class Plato {
     private int id;
     private String nombre;
@@ -12,9 +8,9 @@ public class Plato {
     private String descripcion;
     private float oferta;
     private String fecha;
-    private Bitmap imagen;
+    private String imagenURL;
 
-    public Plato(int id, String nombre, String ingredientes, float precio, String descripcion, float oferta, String fecha, Bitmap imagen) {
+    public Plato(int id, String nombre, String ingredientes, float precio, String descripcion, float oferta, String fecha, String imagenURL) {
         this.id = id;
         this.nombre = nombre;
         this.ingredientes = ingredientes;
@@ -22,17 +18,17 @@ public class Plato {
         this.descripcion = descripcion;
         this.oferta = oferta;
         this.fecha = fecha;
-        this.imagen = imagen;
+        this.imagenURL = imagenURL;
     }
 
-    public Plato(String nombre, String ingredientes, float precio, String descripcion, float oferta, String fecha, Bitmap imagen) {
+    public Plato(String nombre, String ingredientes, float precio, String descripcion, float oferta, String fecha, String imagenURL) {
         this.nombre = nombre;
         this.ingredientes = ingredientes;
         this.precio = precio;
         this.descripcion = descripcion;
         this.oferta = oferta;
         this.fecha = fecha;
-        this.imagen = imagen;
+        this.imagenURL = imagenURL;
     }
 
     public int getId() {
@@ -91,11 +87,11 @@ public class Plato {
         this.fecha = fecha;
     }
 
-    public Bitmap getImagen() {
-        return imagen;
+    public String getImagenURL() {
+        return imagenURL;
     }
 
-    public void setImagen(Bitmap imagen) {
-        this.imagen = imagen;
+    public void setImagenURL(String imagenURL) {
+        this.imagenURL = imagenURL;
     }
 }

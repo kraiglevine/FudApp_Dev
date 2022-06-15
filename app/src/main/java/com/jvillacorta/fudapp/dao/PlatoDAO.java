@@ -42,7 +42,7 @@ public class PlatoDAO {
             valores.put("descripcion", plato.getDescripcion());
             valores.put("oferta", plato.getOferta());
             valores.put("fecha", String.valueOf(plato.getFecha()));
-            valores.put("imagen", String.valueOf(plato.getImagen()));
+            valores.put("imagen", plato.getImagenURL());
 
             long resultado = db.insert(DatosBD.TB_PLATO, null, valores);
             if(resultado != -1){
@@ -62,7 +62,7 @@ public class PlatoDAO {
         try{
             Cursor c = db.rawQuery("SELECT * FROM "+DatosBD.TB_PLATO, null);
             while (c.moveToNext()){
-                listarPlatos().add(new Plato(
+                listaPlatos.add(new Plato(
                         c.getInt(0),
                         c.getString(1),
                         c.getString(2),
@@ -70,7 +70,7 @@ public class PlatoDAO {
                         c.getString(4),
                         c.getFloat(5),
                         c.getString(6),
-                        Herramientas.convertirBlobABitmap(c, 7)
+                        c.getString(7)
                 ));
             }
         }catch (Exception e){

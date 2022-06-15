@@ -22,7 +22,7 @@ public class ListarPlatosActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listar_platos);
 
-        recyclerPlato.findViewById(R.id.rvPlatos);
+        recyclerPlato = findViewById(R.id.rvPlatos);
         mostrarPlatos();
     }
 

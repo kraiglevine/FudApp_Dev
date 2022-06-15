@@ -21,7 +21,7 @@ public class PlatosTB extends SQLiteOpenHelper {
                         "descripcion TEXT NOT NULL, "+
                         "oferta FLOAT NOT NULL, "+
                         "fecha DATE NOT NULL, "+
-                        "imagen BLOB NOT NULL);";
+                        "imagen TEXT NOT NULL);";
         db.execSQL(query);
     }
 

@@ -41,11 +41,14 @@ public class PlatoRecycler extends RecyclerView.Adapter<PlatoRecycler.MyViewHold
         holder.plato_descripcion.setText(listaPlatos.get(position).getDescripcion()+"");
         holder.plato_oferta.setText(listaPlatos.get(position).getOferta()+"");
         //holder.plato_imagen.setImageBitmap(listaPlatos.get(position).getImagen());
+        //Herramientas.cargarImagenURL(listaPlatos.get(position).getImagenURL(), holder.plato_imagen);
+        //Herramientas.cargarImagenURL(listaPlatos.get(position).getImagenURL(), holder.plato_imagen);
+        holder.plato_imagen.setImageDrawable(Herramientas.cargarImagenURL(listaPlatos.get(position).getImagenURL()+"", holder.plato_imagen));
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return listaPlatos.size();
     }
 
     public class  MyViewHolder extends RecyclerView.ViewHolder{
