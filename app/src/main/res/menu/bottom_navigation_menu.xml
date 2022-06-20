@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_drawer"
+        android:title="Drawer"
+        android:icon="@drawable/ic_dehaze"/>
+    <item
+        android:id="@+id/menu_sumar"
+        android:title="Sumar"
+        android:icon="@drawable/ic_add"/>
+    <item
+        android:id="@+id/menu_multiplicar"
+        android:title="Multiplicar"
+        android:icon="@drawable/ic_close"/>
+</menu>

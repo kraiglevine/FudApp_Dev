@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.jvillacorta.fudapp">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -16,7 +16,25 @@
         android:theme="@style/Theme.FudApp"
         tools:targetApi="31">
         <activity
+            android:name=".MultiplicarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SumarActivity"
+            android:exported="false" />
+        <activity
             android:name=".ListarPlatosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".frmRegistrarPlato"
+            android:exported="false" />
+        <activity
+            android:name=".WelcomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,21 +42,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".frmRegistrarPlato"
-            android:exported="false">
-
-        </activity>
-        <activity
-            android:name=".WelcomeActivity"
-            android:exported="false">
-        </activity>
-        <activity
-            android:name=".RegisterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
