@@ -1,16 +1,21 @@
 package com.jvillacorta.fudapp.util;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.jvillacorta.fudapp.MainActivity;
 import com.jvillacorta.fudapp.R;
+import com.jvillacorta.fudapp.RegisterActivity;
+import com.jvillacorta.fudapp.RegistrarPlato;
 import com.jvillacorta.fudapp.entity.Plato;
 
 import java.util.ArrayList;
@@ -44,6 +49,20 @@ public class PlatoRecycler extends RecyclerView.Adapter<PlatoRecycler.MyViewHold
         //Herramientas.cargarImagenURL(listaPlatos.get(position).getImagenURL(), holder.plato_imagen);
         //Herramientas.cargarImagenURL(listaPlatos.get(position).getImagenURL(), holder.plato_imagen);
         holder.plato_imagen.setImageDrawable(Herramientas.cargarImagenURL(listaPlatos.get(position).getImagenURL()+"", holder.plato_imagen));
+
+        holder.linearLayout.setOnLongClickListener(v -> {
+            Intent intent = new Intent(context, RegistrarPlato.class);
+            intent.putExtra("pl_id", listaPlatos.get(position).getId());
+            intent.putExtra("pl_nombre", listaPlatos.get(position).getNombre());
+            intent.putExtra("pl_ingredientes", listaPlatos.get(position).getIngredientes());
+            intent.putExtra("pl_descripcion", listaPlatos.get(position).getDescripcion());
+            intent.putExtra("pl_precio", listaPlatos.get(position).getPrecio()+"");
+            intent.putExtra("pl_oferta", listaPlatos.get(position).getOferta()+"");
+            intent.putExtra("pl_fecha", listaPlatos.get(position).getFecha());
+            intent.putExtra("pl_imagenURL", listaPlatos.get(position).getImagenURL());
+            context.startActivity(intent);
+            return false;
+        });
     }
 
     @Override
@@ -54,6 +73,7 @@ public class PlatoRecycler extends RecyclerView.Adapter<PlatoRecycler.MyViewHold
     public class  MyViewHolder extends RecyclerView.ViewHolder{
         TextView plato_nombre, plato_ingredientes, plato_precio, plato_descripcion, plato_oferta;
         ImageView plato_imagen;
+        LinearLayout linearLayout;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             plato_nombre = itemView.findViewById(R.id.txtPlatoNombre);
@@ -62,6 +82,7 @@ public class PlatoRecycler extends RecyclerView.Adapter<PlatoRecycler.MyViewHold
             plato_descripcion = itemView.findViewById(R.id.txtPlatoDescripcion);
             plato_oferta = itemView.findViewById(R.id.txtPlatoOferta);
             plato_imagen = itemView.findViewById(R.id.ivPlatoImagen);
+            linearLayout = itemView.findViewById(R.id.llMostrarDatosPlato);
         }
     }
 }

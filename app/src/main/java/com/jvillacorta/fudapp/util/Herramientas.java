@@ -1,5 +1,6 @@
 package com.jvillacorta.fudapp.util;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -10,6 +11,7 @@ import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
 
 import com.jvillacorta.fudapp.R;
+import com.jvillacorta.fudapp.RegistrarPlato;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 

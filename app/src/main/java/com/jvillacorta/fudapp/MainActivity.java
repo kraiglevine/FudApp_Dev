@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             }
             if(item.getItemId() == R.id.menu_multiplicar){
                 selectItemBottomNav(item);
-                //navigationView.setCheckedItem(R.id.nav_multiplicar);
+                navigationView.setCheckedItem(R.id.nav_multiplicar);
             }
             return false;
         });
@@ -77,12 +77,20 @@ public class MainActivity extends AppCompatActivity {
             case R.id.nav_home:
                 ft.replace(R.id.content, new InicioFragment()).commit();
                 break;
+            case R.id.nav_listaPlatos:
+                startActivity(new Intent(MainActivity.this, ListarPlatosActivity.class));
+                break;
+            case R.id.nav_multiplicar:
+                ft.replace(R.id.content, new MultiplicarFragment()).commit();
+                break;
+                /*
             case R.id.nav_sumar:
                 ft.replace(R.id.content, new SumarFragment()).commit();
                 break;
             case R.id.nav_multiplicar:
                 ft.replace(R.id.content, new MultiplicarFragment()).commit();
                 break;
+                */
         }
         setTitle(item.getTitle());
         drawerLayout.closeDrawers();

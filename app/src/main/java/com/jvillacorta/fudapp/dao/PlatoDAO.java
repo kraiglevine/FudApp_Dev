@@ -63,7 +63,7 @@ public class PlatoDAO {
             Cursor c = db.rawQuery("SELECT * FROM "+DatosBD.TB_PLATO, null);
             while (c.moveToNext()){
                 listaPlatos.add(new Plato(
-                        c.getInt(0),
+                        c.getString(0),
                         c.getString(1),
                         c.getString(2),
                         c.getFloat(3),

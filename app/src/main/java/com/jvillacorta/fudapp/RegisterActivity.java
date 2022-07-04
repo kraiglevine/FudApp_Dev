@@ -2,6 +2,8 @@ package com.jvillacorta.fudapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -40,19 +42,17 @@ public class RegisterActivity extends AppCompatActivity {
 
                 if(!correo.isEmpty() && !password.isEmpty()){
                     FirebaseAuth.getInstance().createUserWithEmailAndPassword(correo, password)
-                            .addOnCompleteListener(new OnCompleteListener<AuthResult>(){
-                                @Override
-                                public void onComplete(@NonNull Task<AuthResult> task) {
-                                    if (task.isSuccessful()) {
-                                        Toast.makeText(RegisterActivity.this, "Authentication successs", Toast.LENGTH_SHORT).show();
-                                        //FirebaseUser user = mAuth.getCurrentUser();
+                            .addOnCompleteListener(task -> {
+                                if (task.isSuccessful()) {
+                                    Toast.makeText(RegisterActivity.this, "Se registró correctamente", Toast.LENGTH_SHORT).show();
+                                    //FirebaseUser user = mAuth.getCurrentUser();
 
-                                        txtCorreo.setText(null);
-                                        txtPassword.setText(null);
-                                    } else {
-                                        // If sign in fails, display a message to the user.
-                                        Toast.makeText(RegisterActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
-                                    }
+                                    txtCorreo.setText(null);
+                                    txtPassword.setText(null);
+                                    startActivity(new Intent(RegisterActivity.this, WelcomeActivity.class));
+                                } else {
+                                    // If sign in fails, display a message to the user.
+                                    Toast.makeText(RegisterActivity.this, "No se pudo registrar", Toast.LENGTH_SHORT).show();
                                 }
                             });
                 }

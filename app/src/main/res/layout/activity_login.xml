@@ -11,14 +11,9 @@
 
     <ImageView
         android:id="@+id/ivBanner"
-        android:layout_width="412dp"
+        android:layout_width="match_parent"
         android:layout_height="208dp"
-        android:foregroundGravity="top"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/banner"/>
-
+        app:srcCompat="@drawable/banner" />
 
     <TextView
         android:id="@+id/textView"

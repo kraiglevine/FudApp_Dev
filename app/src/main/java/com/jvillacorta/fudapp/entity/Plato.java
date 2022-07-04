@@ -1,7 +1,7 @@
 package com.jvillacorta.fudapp.entity;
 
 public class Plato {
-    private int id;
+    private String id;
     private String nombre;
     private String ingredientes;
     private float precio;
@@ -10,7 +10,7 @@ public class Plato {
     private String fecha;
     private String imagenURL;
 
-    public Plato(int id, String nombre, String ingredientes, float precio, String descripcion, float oferta, String fecha, String imagenURL) {
+    public Plato(String id, String nombre, String ingredientes, float precio, String descripcion, float oferta, String fecha, String imagenURL) {
         this.id = id;
         this.nombre = nombre;
         this.ingredientes = ingredientes;
@@ -31,11 +31,15 @@ public class Plato {
         this.imagenURL = imagenURL;
     }
 
-    public int getId() {
+    public Plato(){
+
+    }
+
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

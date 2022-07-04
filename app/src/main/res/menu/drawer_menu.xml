@@ -8,11 +8,20 @@
             android:title="Inicio"
             android:checked="true"/>
         <item
+            android:id="@+id/nav_listaPlatos"
+            android:icon="@drawable/ic_food_bank"
+            android:title="Lista Platos" />
+        <item
+            android:icon="@drawable/ic_close"
+            android:title="Multiplicar" />
+        <item
             android:id="@+id/nav_sumar"
-            android:icon="@drawable/ic_add"
-            android:title="Sumar" />
+            android:enabled="false"
+            android:icon="@drawable/ic_close"
+            android:title="Multiplicar" />
         <item
             android:id="@+id/nav_multiplicar"
+            android:enabled="false"
             android:icon="@drawable/ic_close"
             android:title="Multiplicar" />
     </group>
