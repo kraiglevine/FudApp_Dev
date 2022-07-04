@@ -80,13 +80,10 @@ public class ListarPlatosActivity extends AppCompatActivity {
         AlertDialog.Builder ventana = new AlertDialog.Builder(ListarPlatosActivity.this);
         ventana.setTitle("Mensaje de Acción");
         ventana.setMessage(mensaje);
-        ventana.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                listaPlatos.remove(pos);
-                FirebaseDAO dao = new FirebaseDAO(ListarPlatosActivity.this);
-                dao.eliminarObjeto("Platos", id, listaPlatos);
-            }
+        ventana.setPositiveButton("Aceptar", (dialog, which) -> {
+            listaPlatos.remove(pos);
+            FirebaseDAO dao = new FirebaseDAO(ListarPlatosActivity.this);
+            dao.eliminarObjeto("Platos", id, listaPlatos);
         });
         ventana.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
             @Override
