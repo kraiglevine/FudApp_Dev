@@ -16,10 +16,11 @@
         android:theme="@style/Theme.FudApp"
         tools:targetApi="31">
         <activity
+            android:name=".MapaActivity"
+            android:exported="false" />
+        <activity
             android:name=".InicioActivity"
-            android:exported="false">
-
-        </activity>
+            android:exported="false"></activity>
         <activity
             android:name=".MultiplicarActivity"
             android:exported="false" />
@@ -28,25 +29,7 @@
             android:exported="false" />
         <activity
             android:name=".ListarPlatosActivity"
-            android:exported="false">
-        </activity>
-        <activity
-            android:name=".RegistrarPlato"
-            android:exported="false">
-
-        </activity>
-        <activity
-            android:name=".WelcomeActivity"
-            android:exported="false">
-
-        </activity>
-        <activity
-            android:name=".RegisterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -54,8 +37,26 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".RegistrarPlato"
+            android:exported="false"></activity>
+        <activity
+            android:name=".WelcomeActivity"
+            android:exported="false"></activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false">
+
+        </activity>
+        <activity
             android:name=".LoginActivity"
             android:exported="false" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
     </application>
 
 </manifest>

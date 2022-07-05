@@ -10,6 +10,8 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.SearchView;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.jvillacorta.fudapp.dao.FirebaseDAO;
@@ -21,11 +23,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListarPlatosActivity extends AppCompatActivity {
-
     RecyclerView recyclerPlato;
     FloatingActionButton btnNuevoPlato;
 
-    private List<Plato> listaPlatos;
+    PlatoRecycler platoRecycler;
+
+    List<Plato> listaPlatos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +58,7 @@ public class ListarPlatosActivity extends AppCompatActivity {
         platoDAO.abrirBD();
         listaPlatos = platoDAO.listarPlatos();
 
-        PlatoRecycler platoRecycler = new PlatoRecycler(this, listaPlatos);
+        platoRecycler = new PlatoRecycler(this, listaPlatos);
         recyclerPlato.setAdapter(platoRecycler);
         recyclerPlato.setLayoutManager(new LinearLayoutManager(this));
     }
