@@ -15,9 +15,5 @@
             android:id="@+id/nav_ubicacion"
             android:icon="@drawable/ic_location_on"
             android:title="Ubicación" />
-        <item
-            android:id="@+id/nav_universidad"
-            android:icon="@drawable/ic_location_on"
-            android:title="Universidad" />
     </group>
 </menu>

@@ -30,12 +30,9 @@ public class MapaActivity extends FragmentActivity implements OnMapReadyCallback
         googleMap = googleMap;
         googleMap.getUiSettings().setZoomControlsEnabled(true);
 
-        String titulo = getIntent().getStringExtra("titulo");
-        float latitud = Float.parseFloat(getIntent().getStringExtra("latitud"));
-        float longitud = Float.parseFloat(getIntent().getStringExtra("longitud"));
-        LatLng latLng = new LatLng(latitud, longitud);
+        LatLng latLng = new LatLng(-12.08122117195649, -77.09265510423168);
 
-        googleMap.addMarker(new MarkerOptions().position(latLng).title(titulo));
+        googleMap.addMarker(new MarkerOptions().position(latLng).title("Emprendimiento"));
         googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 16));
     }
 }
