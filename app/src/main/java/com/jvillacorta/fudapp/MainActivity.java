@@ -81,7 +81,18 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, ListarPlatosActivity.class));
                 break;
             case R.id.nav_ubicacion:
-                startActivity(new Intent(MainActivity.this, MapaActivity.class));
+                Intent emprendimiento = new Intent(MainActivity.this, MapaActivity.class);
+                emprendimiento.putExtra("titulo", "Fudapp - Emprendimiento");
+                emprendimiento.putExtra("latitud", "-12.08122117195649");
+                emprendimiento.putExtra("longitud", "-77.09265510423168");
+                startActivity(emprendimiento);
+                break;
+            case R.id.nav_universidad:
+                Intent universidad = new Intent(MainActivity.this, MapaActivity.class);
+                universidad.putExtra("titulo", "Universidad");
+                universidad.putExtra("latitud", "-12.058463");
+                universidad.putExtra("longitud", "-77.058496");
+                startActivity(universidad);
                 break;
                 /*
             case R.id.nav_sumar:
@@ -102,10 +113,10 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction ft = fm.beginTransaction();
         switch (item.getItemId()){
             case R.id.menu_sumar:
-                startActivity(new Intent(MainActivity.this, SumarActivity.class));
+                //startActivity(new Intent(MainActivity.this, SumarActivity.class));
                 break;
             case R.id.menu_multiplicar:
-                startActivity(new Intent(MainActivity.this, MultiplicarActivity.class));
+                //startActivity(new Intent(MainActivity.this, MultiplicarActivity.class));
                 break;
         }
         drawerLayout.closeDrawers();

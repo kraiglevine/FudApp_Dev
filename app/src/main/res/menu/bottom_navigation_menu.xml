@@ -7,9 +7,9 @@
     <item
         android:id="@+id/menu_sumar"
         android:title="Sumar"
-        android:icon="@drawable/ic_add"/>
+        android:icon="@drawable/ic_discount"/>
     <item
         android:id="@+id/menu_multiplicar"
         android:title="Multiplicar"
-        android:icon="@drawable/ic_close"/>
+        android:icon="@drawable/ic_support_agent"/>
 </menu>
