@@ -178,6 +178,8 @@ public class RegistrarPlato extends AppCompatActivity {
             txtFecha.setText(getIntent().getStringExtra("pl_fecha"));
             txtImagenURL.setText(getIntent().getStringExtra("pl_imagenURL"));
             Herramientas.cargarImagenURLenIV(txtImagenURL.getText().toString(), ivPlato);
+
+            btnRegistrarPlato.setText(getIntent().getStringExtra("pl_btnActualizar"));
         } else {
             registra = true;
         }

@@ -68,6 +68,8 @@ public class PlatoRecycler extends RecyclerView.Adapter<PlatoRecycler.MyViewHold
             intent.putExtra("pl_oferta", listaPlatos.get(position).getOferta()+"");
             intent.putExtra("pl_fecha", listaPlatos.get(position).getFecha());
             intent.putExtra("pl_imagenURL", listaPlatos.get(position).getImagenURL());
+
+            intent.putExtra("pl_btnActualizar", "Actualizar Plato");
             context.startActivity(intent);
             return false;
         });
